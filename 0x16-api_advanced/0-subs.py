@@ -5,14 +5,6 @@ Contains the number_of_subscribers function
 
 import requests
 
-BASE_URL = 'https://www.reddit.com'
-'''Reddit's base API URL.
-'''
-#!/usr/bin/python3
-'''A module containing functions for working with the Reddit API.
-'''
-import requests
-
 
 BASE_URL = 'https://www.reddit.com'
 '''Reddit's base API URL.
@@ -28,7 +20,9 @@ api_headers = {
     ])
 }
 
+
 def number_of_subscribers(subreddit):
+
     """returns the number of subscribers for a given subreddit"""
     r = requests.get(
         '{}/r/{}/about.json'.format(BASE_URL, subreddit),
