@@ -24,6 +24,10 @@ api_headers = {
 def number_of_subscribers(subreddit):
 
     """returns the number of subscribers for a given subreddit"""
+    
+    if subreddit is None or type(subreddit) is not str:
+        return 0
+
     r = requests.get(
         '{}/r/{}/about.json'.format(BASE_URL, subreddit),
         headers=api_headers,
